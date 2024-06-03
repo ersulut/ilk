@@ -1,0 +1,254 @@
+/* Gelişmiş ve Kapsamlı CSS Reset */
+
+/* Temel sıfırlama */
+/* Tüm elementlerin box-sizing özelliğini border-box yapar ve margin, padding, border, font ve vertical-align değerlerini sıfırlar. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 elementlerini sıfırlama */
+/* Modern HTML5 elementlerini block seviyesinde görüntüler. */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
+/* Body stil sıfırlaması */
+/* Body elementinin temel stil özelliklerini ayarlar. */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* Metinlerin daha pürüzsüz görünmesini sağlar. */
+    -moz-osx-font-smoothing: grayscale; /* OS X üzerinde metinlerin daha pürüzsüz görünmesini sağlar. */
+    text-rendering: optimizeLegibility; /* Metinlerin okunabilirliğini artırır. */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+}
+
+/* Liste stil sıfırlaması */
+/* Liste elementlerinin varsayılan stilini kaldırır. */
+ol, ul {
+    list-style: none;
+}
+
+/* Blok alıntılar ve alıntılar için sıfırlama */
+/* Blok alıntılar ve alıntı elementlerinin varsayılan stilini kaldırır. */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: '';
+    content: none;
+}
+
+/* Tablo stil sıfırlaması */
+/* Tabloların varsayılan stilini sıfırlar. */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Tablo hücreleri ve başlıkları */
+/* Tablolarda başlık ve hücreleri varsayılan stilini sıfırlar ve hizalamayı ayarlar. */
+caption, th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.5rem;
+}
+
+/* Form elemanları */
+/* Form elemanlarının varsayılan stilini sıfırlar ve font özelliklerini kalıtır. */
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Butonlar */
+/* Butonlar için varsayılan stil sıfırlaması ve cursor değişikliği. */
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Sayısal inputlar */
+/* Sayısal inputlar için tarayıcıların varsayılan spinner'larını kaldırır. */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Textarea */
+/* Textarea elemanlarının yeniden boyutlandırılmasını dikeyle sınırlar. */
+textarea {
+    resize: vertical;
+}
+
+/* Placeholder için */
+/* Placeholder metninin stilini ayarlar. */
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* Seçim stili */
+/* Seçili metinlerin arka plan ve metin rengini ayarlar. */
+::selection {
+    background-color: #b3d4fc;
+    color: #000;
+}
+
+/* Görsel medya */
+/* Görsel medya elemanlarının (img, video) varsayılan stilini sıfırlar ve boyutlarını içerik kutusuna sığacak şekilde ayarlar. */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Flexbox ve grid ile ilgili sıfırlamalar */
+/* Flexbox ve grid kullanıldığında belirli elementlerin varsayılan stilini sıfırlar. */
+:where(:not(fieldset, legend, button, img, iframe, meter, progress, textarea)) {
+    display: revert;
+}
+
+/* A linklerini sıfırlama */
+/* A linklerinin varsayılan stilini sıfırlar ve metin dekorasyonunu kaldırır. */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Gömülü içeriklerin sıfırlanması */
+/* Gömülü içeriklerin varsayılan stilini sıfırlar ve görüntülenmesini iyileştirir. */
+iframe {
+    border: 0;
+}
+
+/* Progress ve meter elementleri */
+/* Progress ve meter elementlerinin varsayılan stilini sıfırlar. */
+progress, meter {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* Audio ve video kontrolleri */
+/* Audio ve video kontrollerinin varsayılan stilini sıfırlar. */
+audio, video {
+    display: inline-block;
+}
+
+/* Safari'ye özgü stiller */
+/* Form elemanları ve diğer elementler için Safari tarayıcısına özgü düzeltmeler. */
+input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+}
+
+/* Media queries */
+/* Hareket azaltma tercihine sahip kullanıcılar için animasyon ve geçiş sürelerini minimize eder. */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Miscellaneous */
+/* Güçlü (strong) metinler için font-weight ayarı. */
+strong {
+    font-weight: bolder;
+}
+
+/* Kod (code) elementleri için font ailesi ayarı. */
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Input ve button odak stilleri */
+/* Klavye erişilebilirliğini artırmak için odak (focus) durumunu belirtir. */
+button:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Scrollbar */
+/* Scrollbar elemanlarının stilini özelleştirir. */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 3px solid #fff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px grey;
+}
+
+/* Form alanları için ipucu */
+/* Form alanlarının iç ipuçları (hint) için stil ayarlaması. */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
